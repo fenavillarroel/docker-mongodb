@@ -1,0 +1,14 @@
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+    volumes:
+      - "/home/pi/docker/mongo:/data/db"
+      - "/home/pi/docker/configdb:/data/configdb"
+    command: mongod --rest
+
